@@ -161,6 +161,29 @@
       margin-bottom: 28px;
     }
 
+
+    /* superscript styling */
+    .authors sup {
+      font-size: 0.65em;
+      vertical-align: super;
+      margin-left: 2px;
+    }
+
+    /* make Supervisor black and italic */
+    .authors em {
+      color: #000;
+      font-style: italic;
+      font-weight: 500;   /* slightly lighter than name */
+      margin-left: 4px;
+    }
+
+    /* affiliation superscripts */
+    .author-aff sup {
+      font-size: 0.75em;
+    }
+
+
+
     /* link buttons */
     .link-row {
       display: flex;
@@ -430,7 +453,28 @@
     }
 
     .f-left { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--muted); }
-    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #10b981; }
+    /* .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #10b981; } */
+
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* Ongoing (Green + pulse) */
+    .status-dot.active {
+      background: #10b981;
+      box-shadow: 0 0 0 0 rgba(16,185,129,0.6);
+      animation: pulse 1.8s infinite;
+    }
+
+    /* Completed (Elegant Gray) */
+    .status-dot.completed {
+      background: #6b7280;
+    }
+
     .f-right  { font-size: 13px; color: var(--muted); }
 
     @media (max-width: 680px) {
@@ -447,8 +491,8 @@
   <!-- Nav -->
   <nav>
     <a class="nav-brand" href="index.html">
-      <div class="avatar">IJ</div>
-      IIT Jodhpur
+      <div class="avatar">NA</div>
+      Noman @IIT Jodhpur
     </a>
     <a class="nav-back" href="index.html">← Back to portfolio</a>
   </nav>
@@ -465,14 +509,40 @@
     <!-- ── HEADER ── -->
     <div class="project-header">
       <div class="project-tag">Project 01 · IIT Jodhpur</div>
-      <h1 class="project-title">Creative and Descriptive<br/>Project Title Here</h1>
+      <h1 class="project-title">Adaptive Teleoperation of UR3e/UR5 Robots over Tactile Internet for Teledentistry</h1>
+
 
       <div class="authors">
-        <a class="author" href="#">First Author</a>
-        <a class="author" href="#">Second Author</a>
-        <a class="author" href="#">Third Author</a>
+        <a class="author" href="#">Noman Ali<sup>1</sup></a>
+        <a class="author" href="#">Raj Rajeshwar Kanoria<sup>1</sup></a>
+        <a class="author" href="#">Aditya Bhargava<sup>1</sup></a>
+        <a class="author" href="#">
+          Vineet Gokhale<sup>2</sup> <em>(Supervisor)</em>
+        </a>
+        <a class="author" href="#">
+          Amit Bhardwaj<sup>1</sup> <em>(Supervisor)</em>
+        </a>
       </div>
-      <span class="author-aff">Indian Institute of Technology Jodhpur &nbsp;·&nbsp; 2025</span>
+
+      <div class="author-aff">
+        <sup>1</sup> Indian Institute of Technology Jodhpur, India  
+        <br>
+        <sup>2</sup> Ghent University, Belgium
+        <!-- &nbsp;·&nbsp; 2025 -->
+      </div>
+
+
+
+
+
+      <!-- <div class="authors">
+        <a class="author" href="#">Noman Ali</a>
+        <a class="author" href="#">Raj Rajeshwar Kanoria</a>
+        <a class="author" href="#">Aditya Bhargava</a>
+        <a class="author" href="#">Vineet Gokhale (Supervisor)</a>
+        <a class="author" href="#">Amit Bhardwaj (Supervisor)</a>
+      </div>
+      <span class="author-aff">Indian Institute of Technology Jodhpur &nbsp;·&nbsp; 2025</span> -->
 
       <div class="link-row">
         <a href="#" class="lbtn primary">📄 Paper</a>
@@ -578,7 +648,8 @@
 
   <footer>
     <div class="f-left">
-      <div class="live-dot"></div>
+      <!-- <div class="live-dot"></div> -->
+      <span class="status-dot completed"></span>
       IIT Jodhpur · Research Portfolio
     </div>
     <div class="f-right"><a href="index.html" style="color:inherit;">← Back to all projects</a></div>
