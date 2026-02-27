@@ -251,7 +251,7 @@
     }
 
     /* ─── TEASER IMAGE ─── */
-    /* .teaser {
+    .teaser {
       width: 100%;
       border-radius: 10px;
       border: 1px solid var(--border);
@@ -263,31 +263,7 @@
       overflow: hidden;
     }
 
-    .teaser img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; } */
-
-  
-    /* ─── TEASER IMAGE ─── */
-    .teaser {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;   /* two equal images */
-      gap: 16px;
-    }
-
-    .teaser img {
-      width: 100%;
-      height: auto;              /* important */
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      object-fit: contain;       /* prevents cropping */
-      background: #fff;          /* clean white background for diagrams */
-    }
-
-    @media (max-width: 768px) {
-      .teaser {
-        grid-template-columns: 1fr;
-      }
-    }
+    .teaser img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
 
     .teaser-placeholder {
       display: flex;
@@ -589,19 +565,19 @@
       </div>
     </div>
 
-
-
     <!-- ── TEASER IMAGE ── -->
     <div class="sec">
       <div class="sec-label">Teaser</div>
-
-      <div class="teaser"> 
-        <img src="./resources/iitj/p1.png" alt="Tactile Internet System">
-        <img src="./resources/iitj/p1.1.png" alt="UR Teleoperation Setup">
+      <div class="teaser">
+        <!-- Replace with: <img src="./resources/teaser.png" alt="Teaser"/> -->
+        <div class="teaser-placeholder">
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3 20.25h18a.75.75 0 00.75-.75V6a.75.75 0 00-.75-.75H3A.75.75 0 002.25 6v13.5c0 .414.336.75.75.75z"/>
+          </svg>
+          <p>Add teaser image (./resources/teaser.png)</p>
+        </div>
       </div>
     </div>
-
-
 
     <!-- ── ABSTRACT ── -->
     <div class="sec">
