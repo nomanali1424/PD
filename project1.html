@@ -545,10 +545,11 @@
       <span class="author-aff">Indian Institute of Technology Jodhpur &nbsp;·&nbsp; 2025</span> -->
 
       <div class="link-row">
+        <a href="#" class="lbtn primary">📄 Project Report</a>
         <a href="#" class="lbtn primary">📄 Paper</a>
         <a href="#" class="lbtn">⌨️ GitHub</a>
         <a href="#" class="lbtn">▶️ Demo</a>
-        <a href="#" class="lbtn">📊 Slides</a>
+        <!-- <a href="#" class="lbtn">📊 Slides</a> -->
       </div>
     </div>
 
@@ -570,7 +571,13 @@
     <div class="sec">
       <div class="sec-label">Abstract</div>
       <p class="abstract-text">
-        This is the abstract for your project. Describe the problem you are solving, why it matters, your approach, and the key results. A good abstract is typically 150–250 words and should be self-contained so a reader can understand the contribution without reading the full paper.
+        Teleoperation systems that integrate haptic and visual feedback are essential for precision-critical remote applications such as teledentistry, telesurgery, and remote maintenance. However, achieving low-latency, stable, and immersive interaction over real-world networks remains a significant challenge due to communication constraints, kinematic mismatches, and sensor inaccuracies. This work presents the design, implementation, and evaluation of an adaptive teleoperation framework built around a UR3e collaborative robot and a Geomagic Touch haptic device. <br><br>
+
+First, we develop a controlled testbed to evaluate communication protocols under varying network conditions, analyzing multiplexing support, Quality of Service (QoS) policies, and prioritization mechanisms. Experimental comparisons reveal that ROS2 provides superior support for multiplexing and QoS-based prioritization, enabling smoother and more reliable teleoperation compared to ROS1-based setups. Integrated real-time video feedback further enhances operator situational awareness, eliminating reliance on external conferencing tools. <br><br>
+
+Second, we design a task-space proportional control strategy using geometric and analytical Jacobians to ensure accurate pose tracking between the haptic stylus and robot end effector despite kinematic differences. A force/torque sensor is analytically calibrated and transformed across coordinate frames to deliver precise, direction-consistent haptic feedback.
+
+The resulting dual-feedback (visual + tactile) system significantly improves responsiveness and operator immersion, establishing a robust experimental platform for future tactile internet and healthcare-oriented teleoperation research.
       </p>
     </div>
 
