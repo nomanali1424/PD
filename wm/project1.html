@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Project Title — IIT Jodhpur</title>
+  <title>Project Title — William & Mary</title>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -15,8 +15,8 @@
       --ink2:     #374151;
       --muted:    #9ca3af;
       --border:   #e5e7eb;
-      --accent:   #7c3aed;
-      --accent-s: #f5f3ff;
+      --accent:   #2563eb;
+      --accent-s: #eff6ff;
     }
 
     body {
@@ -161,6 +161,29 @@
       margin-bottom: 28px;
     }
 
+
+    /* superscript styling */
+    .authors sup {
+      font-size: 0.65em;
+      vertical-align: super;
+      margin-left: 2px;
+    }
+
+    /* make Supervisor black and italic */
+    .authors em {
+      color: #000;
+      font-style: italic;
+      font-weight: 500;   /* slightly lighter than name */
+      margin-left: 4px;
+    }
+
+    /* affiliation superscripts */
+    .author-aff sup {
+      font-size: 0.75em;
+    }
+
+
+
     /* link buttons */
     .link-row {
       display: flex;
@@ -233,15 +256,19 @@
       border-radius: 10px;
       border: 1px solid var(--border);
       background: var(--bg);
-      aspect-ratio: 16/7;
+      /* aspect-ratio: 16/7; */
+      aspect-ratio: auto;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
     }
 
-    .teaser img { width: 80%; height: 100%; object-fit: cover; border-radius: 10px; }
-  
+    .teaser img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
     .teaser-placeholder {
       display: flex;
@@ -254,13 +281,14 @@
     .teaser-placeholder svg { width: 48px; height: 48px; stroke: #d1d5db; }
     .teaser-placeholder p { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: #d1d5db; }
 
-    /* ─── ABSTRACT ─── */
+    ─── ABSTRACT ───
     .abstract-text {
       font-size: 16px;
       font-weight: 400;
       color: var(--ink2);
       line-height: 1.8;
     }
+
 
     /* ─── VIDEO EMBED ─── */
     .video-wrap {
@@ -389,7 +417,13 @@
       overflow: hidden;
     }
 
-    .method-img img { width: 100%; border-radius: 10px; }
+
+    .method-img img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+    }
 
     .method-placeholder {
       display: flex;
@@ -420,6 +454,31 @@
       line-height: 1.75;
     }
 
+
+    /* ─── INSTITUTION LOGOS ─── */
+    .logo-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      padding: 10px 0 5px 0;
+    }
+
+    .logo-row img {
+      height: 90px;
+      object-fit: contain;
+      opacity: 0.9;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .logo-row img:hover {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+
+
     /* ─── FOOTER ─── */
     footer {
       border-top: 1px solid var(--border);
@@ -431,7 +490,28 @@
     }
 
     .f-left { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--muted); }
-    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #10b981; }
+    /* .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #10b981; } */
+
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* Ongoing (Green + pulse) */
+    .status-dot.active {
+      background: #10b981;
+      box-shadow: 0 0 0 0 rgba(16,185,129,0.6);
+      animation: pulse 1.8s infinite;
+    }
+
+    /* Completed (Elegant Gray) */
+    .status-dot.completed {
+      background: #6b7280;
+    }
+
     .f-right  { font-size: 13px; color: var(--muted); }
 
     @media (max-width: 680px) {
@@ -448,8 +528,8 @@
   <!-- Nav -->
   <nav>
     <a class="nav-brand" href="index.html">
-      <div class="avatar">IJ</div>
-      IIT Jodhpur
+      <div class="avatar">NA</div>
+      Noman @William & Mary
     </a>
     <a class="nav-back" href="index.html">← Back to portfolio</a>
   </nav>
@@ -458,64 +538,176 @@
   <div class="breadcrumb">
     <a href="index.html">Portfolio</a>
     <span class="sep">/</span>
-    <span class="current">Understanding Neuroscience of Touch</span>
+    <span class="current">MetaXplain</span>
   </div>
 
   <div class="page">
 
     <!-- ── HEADER ── -->
     <div class="project-header">
-      <div class="project-tag">Project 02 · IIT Jodhpur</div>
-      <h1 class="project-title">Understanding Neuroscience of Touch</h1>
+      <div class="project-tag">Project 01 · William & Mary</div>
+      <h1 class="project-title">Is Meta-Path Attention an Explanation? Evidence of Alignment and Decoupling in Heterogeneous GNNs</h1>
+
 
       <div class="authors">
-        <a class="author" href="#">Noman Ali</a>
-        <a class="author" href="#">Vignesh Muralidharan</a>
-        <a class="author" href="#">Amit Bhardwaj</a>
+        <a class="author" href="#">Maiqi Jiang<sup>1</sup></a>
+        <a class="author" href="#">Noman Ali<sup>2</sup></a>
+        <a class="author" href="#">Yiran Ding<sup>3</sup></a>
+        <a class="author" href="https://scholar.google.com/citations?user=ZPBYEngAAAAJ&hl=zh-CN">
+          Yanfu Zhang<sup>1</sup> <em>(Supervisor)</em>
+        </a>
       </div>
-      <span class="author-aff">Indian Institute of Technology Jodhpur &nbsp;·&nbsp; 2025</span>
+
+      <div class="author-aff">
+        <sup>1</sup> William & Mary, Williamsburg, VA, USA  
+        <br>
+        <sup>2</sup> Indian Institute of Technology Jodhpur, Rajasthan, India
+        <br>
+        <sup>3</sup> Brown University, Providence, RI, USA
+        <!-- &nbsp;·&nbsp; 2025 -->
+      </div>
+
+
+
 
       <div class="link-row">
-        <a href="https://drive.google.com/file/d/1sRYehO5PAQR8oXRqq9gGVHLJLEKmXTdH/view?usp=sharing" class="lbtn primary">📄 Project Report</a>
-        <!-- <a href="#" class="lbtn">⌨️ GitHub</a> -->
-        <a href="#" class="lbtn">📊 Slides</a>
+        <a href="https://arxiv.org/pdf/2602.08500" 
+          class="lbtn primary" 
+          target="_blank" 
+          rel="noopener noreferrer">
+          📄 Paper
+        </a>
+
+        <!-- <a href="https://drive.google.com/file/d/1zbbh601FlJZ4iRlsY5cWxI2c9A548BeL/view?usp=sharing" class="lbtn primary">📄 Paper</a> -->
+        <!-- <a href="#" class="lbtn primary">⌨️ GitHub</a> -->
+        <a href="#" class="lbtn primary" onclick="showCodeNotice(event)">⌨️ GitHub</a>
+        <!-- <a href="https://drive.google.com/file/d/12Z_fkRmUNk6TttZeS9GUN65wykozvUcj/view?usp=sharing" 
+          class="lbtn primary" 
+          target="_blank" 
+          rel="noopener noreferrer">
+          ▶️ Demo
+        </a> -->
+        <a href="#" class="lbtn primary">📊 Slides</a>
       </div>
     </div>
 
-    <!-- ── TEASER IMAGE ── -->
+
     <div class="sec">
       <div class="sec-label">Teaser</div>
       <div class="teaser">
-        <!-- Replace with: <img src="./resources/teaser.png" alt="Teaser"/> -->
-        <img src="./resources/iitj/T2.png" alt="Understanding Neuroscience of Touch">
+        <img src="resources/p1/Teaser.png" alt="Teaser Image">
       </div>
     </div>
+
 
     <!-- ── ABSTRACT ── -->
     <div class="sec">
       <div class="sec-label">Abstract</div>
       <p class="abstract-text">
-        Understanding how humans perceive touch is fundamental to advancing haptics, neuroscience, and human–computer interaction. However, existing approaches often rely primarily on behavioral observations and self-reported measures, which may fail to capture the complex neural mechanisms underlying tactile perception. In this work, we propose a novel neurohaptic research framework that leverages electroencephalography (EEG) to investigate the neural representation of tactile experiences. Unlike conventional studies that primarily use EEG or fMRI for supervised classification tasks, our approach explores the potential of EEG signals to discover latent patterns and previously unknown classes in touch perception. Participants interact with various materials through active tactile exploration while EEG signals and subjective Likert-scale ratings are collected to capture perceived attributes such as roughness and hardness. By analyzing these signals using clustering-based methods, the study aims to reveal inter-class and intra-class relationships between different tactile stimuli and identify similarities in neural responses across materials. Furthermore, the framework enables the integration of new materials by comparing them with existing clusters, expanding beyond traditional fixed-class classification paradigms. This research provides deeper insights into the neurobiological foundations of touch perception and offers promising applications in neurohaptics, robotics, and immersive technologies such as the metaverse.
+        Meta-path-based heterogeneous graph neural networks aggregate over meta-path-induced views, and their semantic-level attention over meta-path channels is widely used as a narrative for ``which semantics matter.'' We study this assumption empirically by asking: when does meta-path attention reflect meta-path importance, and when can it decouple? A key challenge is that most post-hoc GNN explainers are designed for homogeneous graphs, and naive adaptations to heterogeneous neighborhoods can mix semantics and confound perturbations. To enable a controlled empirical analysis, we introduce MetaXplain, a meta-path-aware post-hoc explanation protocol that applies existing explainers in the native meta-path view domain via (i) view-factorized explanations, (ii) schema-valid channel-wise perturbations, and (iii) fusion-aware attribution, without modifying the underlying predictor. We benchmark representative gradient-, perturbation-, and Shapley-style explainers on ACM, DBLP, and IMDB with HAN and HAN-GCN, comparing against xPath and type-matched random baselines under standard faithfulness metrics. To quantify attention reliability, we propose Meta-Path Attention--Explanation Alignment (MP-AEA), which measures rank correlation between learned attention weights and explanation-derived meta-path contribution scores across random runs. Our results show that meta-path-aware explanations typically outperform random controls, while MP-AEA reveals both high-alignment and statistically significant decoupling regimes depending on the dataset and backbone; moreover, retraining on explanation-induced subgraphs often preserves, and in some noisy regimes improves, predictive performance, suggesting an explanation-as-denoising effect.
       </p>
+    </div>
+
+
+
+
+    <!-- ── TALK / VIDEO ──
+    <div class="sec">
+      <div class="sec-label">Talk / Video</div>
+      <div class="video-wrap">
+        <iframe 
+          src="https://drive.google.com/file/d/12Z_fkRmUNk6TttZeS9GUN65wykozvUcj/preview?autoplay=1"
+          width="100%" 
+          height="480"
+          allow="autoplay"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-links">
+        <a href="#" class="lbtn">📊 Slides</a>
+        <a href="#" class="lbtn">📝 Transcript</a>
+      </div>
+    </div> -->
+
+
+
+
+    
+
+    <!-- ── METHOD ── -->
+
+    <div class="sec">
+      <div class="sec-label">Method</div>
+
+      <div class="method-img">
+        <img src="resources/p1/method.png" alt="Method Diagram">
+      </div>
+
+      <p class="method-caption">
+        Figure 1. Overview of the MetaXplain protocol (eg. for the GNNExplainer and PGM-Explainer) for meta-path-aware post-hoc explanations. (a) We apply existing explainers in the native meta-path view domain via view-factorized explanations, schema-valid channel-wise perturbations, and fusion-aware attribution, without modifying the underlying predictor. (b) To quantify attention reliability, we propose Meta-Path Attention--Explanation Alignment (MP-AEA), which measures rank correlation between learned attention weights and explanation-derived meta-path contribution scores across random runs.
+    </div>
+
+
+
+    
+
+    <!-- ── BIBTEX ── -->
+    <div class="sec">
+      <div class="sec-label">BibTeX</div>
+      <button class="copy-btn" onclick="copyBib()">⎘ Copy</button>
+
+      <div class="bibtex-block" id="bibtex">@article{jiang2026meta,
+  title={Is Meta-Path Attention an Explanation? Evidence of Alignment and Decoupling in Heterogeneous GNNs},
+  author={Jiang, Maiqi and Ali, Noman and Ding, Yiran and Zhang, Yanfu},
+  journal={arXiv preprint arXiv:2602.08500},
+  year={2026}
+}</div>
     </div>
 
     <!-- ── ACKNOWLEDGEMENTS ── -->
     <div class="sec">
       <div class="sec-label">Acknowledgements</div>
       <p class="ack-text">
-        This work was supported by the Conitive Science Department at IIT Jodhpur. 
-        The author sincerely acknowledges the guidance and mentorship of Dr. Vignesh Muralidharan and Dr. Amit Bhardwaj, whose expertise, insights, and continuous support were instrumental in shaping this research. 
-          The author also extends gratitude to the participants who contributed their time and effort to the study, as well as to the broader research community for their foundational work in neurohaptics and tactile perception that inspired this project.
+        This work was supported by the Department of Computer science at the, 
+        William and Mary, Virginia, USA. 
+        The author sincerely acknowledges the guidance and mentorship of
+        Dr. Yanfu Zhang, whose expertise, continuous support, and 
+        insightful discussions were instrumental in shaping this research. 
+        His valuable feedback significantly contributed to the development 
+        and evaluation of the proposed framework.
       </p>
     </div>
 
+
+    <!-- ── INSTITUTIONS ── -->
+    <div class="sec">
+      <div class="sec-label">Supporting Institutions</div>
+
+      <div class="logo-row">
+        <!-- <img src="./resources/iiita/SIS/inst_logo/iitb.png" alt="IITB Logo"> -->
+        <img src="../resources/wm/Inst_logo/wm.png" alt="William and Mary Logo">
+        <img src="../resources/iitj/inst_logo/iitj.png" alt="IITJ Logo">
+        <img src="./resources/p1/BU.png" alt="BU Logo">
+        <!-- <img src="./resources/iiita/SIS/inst_logo/iiita.png" alt="IIITA Logo">
+        <img src="./resources/iiita/SIS/inst_logo/iitk.png" alt="IITK Logo">
+        <img src="./resources/iiita/SIS/inst_logo/ccc_2.png" alt="CCC Logo"> -->
+        <!-- <img src="./resources/iiita/SIS/inst_logo/ccc_1.png" alt="CCC Logo"> -->
+      </div>
+    </div>
+
+
+
   </div>
+
+
+
 
 
   <footer>
     <div class="f-left">
       <div class="live-dot"></div>
-      IIT Jodhpur · Research Portfolio
+      <!-- <span class="status-dot completed"></span> -->
+      William and Mary · Research Portfolio
     </div>
     <div class="f-right"><a href="index.html" style="color:inherit;">← Back to all projects</a></div>
   </footer>
@@ -530,6 +722,13 @@
       });
     }
   </script>
+
+<script>
+function showCodeNotice(event) {
+  event.preventDefault();
+  alert("The source code will be released after the peer-review process of ACM KDD 2026.\n\nPlease refer to the preprint paper for details.");
+}
+</script>
 
 </body>
 </html>

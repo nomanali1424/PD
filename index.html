@@ -28,18 +28,10 @@ body{
   color:var(--ink);
 }
 
-a{text-decoration:none;color:inherit;}
-
-
-
-
-/* .inst-header{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  margin-bottom:6px;
-} */
-
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
 .inst-header{
   display:flex;
@@ -47,7 +39,6 @@ a{text-decoration:none;color:inherit;}
   gap:18px;
   margin-bottom:8px;
 }
-
 
 .inst-logo{
   width:52px;
@@ -58,8 +49,6 @@ a{text-decoration:none;color:inherit;}
   padding:6px;
   border:1px solid var(--border);
 }
-
-
 
 /* ───────── NAV ───────── */
 
@@ -114,10 +103,6 @@ nav{
   color:var(--ink);
 }
 
-
-
-
-
 /* ───────── HEADER ───────── */
 
 .header{
@@ -155,10 +140,6 @@ nav{
   line-height:1.7;
 }
 
-
-
-
-
 /* ───────── MAIN ───────── */
 
 .main{
@@ -173,10 +154,6 @@ nav{
   margin-bottom:30px;
 }
 
-
-
-
-
 /* ───────── GRID ───────── */
 
 .grid{
@@ -184,10 +161,6 @@ nav{
   grid-template-columns:1fr 1fr;
   gap:24px;
 }
-
-
-
-
 
 /* ───────── CARD ───────── */
 
@@ -209,13 +182,19 @@ nav{
   height:4px;
 }
 
-.card:nth-child(1) .card-stripe{
+
+.stripe-blue{background:var(--blue);}
+.stripe-violet{background:var(--violet);}
+.stripe-green{background:#10b981;}
+.stripe-orange{background:#f59e0b;}
+
+/* .card:nth-child(1) .card-stripe{
   background:var(--blue);
 }
 
 .card:nth-child(2) .card-stripe{
   background:var(--violet);
-}
+} */
 
 .card-body{
   padding:28px;
@@ -234,10 +213,41 @@ nav{
   margin-bottom:14px;
 }
 
+.research-focus{
+  font-size:13px;
+  color:var(--ink);
+  font-weight:600;
+  margin-bottom:10px;
+  line-height:1.6;
+}
+
+.research-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:12px;
+}
+
+.research-tag{
+  font-size:11px;
+  font-weight:600;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#f1f5f9;
+  color:#334155;
+}
+
 .desc{
   font-size:14px;
   color:var(--ink2);
   line-height:1.7;
+  margin-bottom:14px;
+}
+
+.methods{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.6;
   margin-bottom:18px;
 }
 
@@ -273,10 +283,6 @@ nav{
   opacity:1;
 }
 
-
-
-
-
 footer{
   border-top:1px solid var(--border);
   background:var(--white);
@@ -285,10 +291,6 @@ footer{
   font-size:13px;
   color:var(--muted);
 }
-
-
-
-
 
 @media(max-width:720px){
   .grid{grid-template-columns:1fr;}
@@ -301,14 +303,15 @@ footer{
 
 <nav>
   <div class="nav-brand">
+    <a href="index.html" style="text-decoration:none;"></a>
     <div class="avatar">NA</div>
     Noman Ali
   </div>
   <ul class="nav-links">
-    <li><a href="#">About</a></li>
-    <li><a href="#">Projects</a></li>
-    <li><a href="#">Publications</a></li>
-    <li><a href="#">Contact</a></li>
+    <!-- <li><a href="#">Publications</a></li> -->
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <!-- <li><a href="#">Contact</a></li> -->
   </ul>
 </nav>
 
@@ -322,57 +325,193 @@ footer{
 </div>
 
 <div class="main">
-
   <div class="section-title">Institutions</div>
 
   <div class="grid">
 
-    <!-- IIT JODHPUR -->
-    <a class="card" href="iitj/index.html">
-      <div class="card-stripe"></div>
+    <!-- William and Mary -->
+    <a class="card" href="wm/index.html">
+      <div class="card-stripe stripe-blue"></div>
+      <!-- <div class="card-stripe"></div> -->
       <div class="arrow">↗</div>
       <div class="card-body">
-        <!-- <h3>Indian Institute of Technology Jodhpur</h3> -->
+
         <div class="inst-header">
-            <img src="resources\iitj\inst_logo\iitj.png" alt="IIT Jodhpur Logo" class="inst-logo"/>
-            <h3>Indian Institute of Technology Jodhpur</h3>
+          <img src="resources/wm/inst_logo/wm.png" alt="William and Mary Logo" class="inst-logo"/>
+          <h3>William & Mary</h3>
         </div>
 
-        <div class="role">Senior Project Assistant · July 2024 – July 2025</div>
-        <div class="desc">
-          Tactile internet systems, teleoperation robotics, ROS2 middleware evaluation,
-          and immersive haptic-visual feedback integration.
+        <div class="role">Research Assistant · Aug 2025 – Present</div>
+
+        <div class="research-focus">
+          Research Focus: LLMs performance degradation in long-context reasoning and Explainability of Heterogeneous GNN.
         </div>
+
+        <div class="research-tags">
+          <span class="research-tag">LLM Pruning</span>
+          <span class="research-tag">Long-Context Reasoning</span>
+          <span class="research-tag">Explainable AI</span>
+          <span class="research-tag"> Heterogeneous GNNs</span>
+        </div>
+
+        <div class="desc">
+          LLM pruning for efficient long-context reasoning and explainable Graph Neural Networks
+          for interpretable predictions in heterogeneous graphs.
+        </div>
+
+        <div class="methods">
+          Methods:  · LLaMA · LLM Pruning · LLM Evaluation · GNN Explainability · Heterogeneous Graph Learning
+        </div>
+
         <div class="card-footer">
           <span class="card-cta">View projects →</span>
           <span style="font-size:12px;color:var(--muted);">02 Projects</span>
         </div>
+
       </div>
     </a>
+
+
+
+
+    <!-- IIT JODHPUR -->
+    <a class="card" href="iitj/index.html">
+      <div class="card-stripe stripe-violet"></div>
+      <!-- <div class="card-stripe"></div> -->
+      <div class="arrow">↗</div>
+      <div class="card-body">
+
+        <div class="inst-header">
+            <img src="resources/iitj/inst_logo/iitj.png" alt="IIT Jodhpur Logo" class="inst-logo"/>
+            <h3>Indian Institute of Technology Jodhpur</h3>
+        </div>
+
+        <div class="role">Senior Project Assistant · July 2024 – July 2025</div>
+
+        <div class="research-focus">
+          Research Focus: Human tactile perception modeling and teleoperation systems for immersive human–machine interaction.
+        </div>
+
+        <div class="research-tags">
+          <span class="research-tag">EEG</span>
+          <span class="research-tag">Tactile Internet</span>
+          <span class="research-tag">Teleoperation</span>
+          <span class="research-tag">Haptic Feedback</span>
+          <span class="research-tag">ROS2</span>
+        </div>
+
+        <div class="desc">
+          EEG-based tactile perception modeling, tactile internet and teleoperation robotics systems,
+          ROS2 middleware evaluation, and immersive haptic-visual feedback integration.
+        </div>
+
+        <div class="methods">
+          Methods: EEG Signal Processing · Deep Learning · ROS2 · Teleoperation Robotics · Haptic Interfaces · UR3e
+        </div>
+
+        <div class="card-footer">
+          <span class="card-cta">View projects →</span>
+          <span style="font-size:12px;color:var(--muted);">02 Projects</span>
+        </div>
+
+      </div>
+    </a>
+
+
 
     <!-- IIIT ALLAHABAD -->
     <a class="card" href="iiita/index.html">
-      <div class="card-stripe"></div>
+      <div class="card-stripe stripe-green"></div>
+      <!-- <div class="card-stripe"></div> -->
       <div class="arrow">↗</div>
       <div class="card-body">
-        <!-- <h3>IIIT Allahabad</h3> -->
+
         <div class="inst-header">
             <img src="resources/iiita/SIS/inst_logo/iiita.png" alt="IIIT Allahabad Logo" class="inst-logo"/>
-            <h3>Indian Institute of Technology Allahabad</h3>
+            <h3>Indian Institute of Information Technology Allahabad</h3>
         </div>
-        <div class="role">Research Role · Year – Year</div>
+
+        <div class="role">Research Intern · May 2023 – June 2024</div>
+
+        <div class="research-focus">
+          Research Focus: Affective computing and multimodal emotion recognition using EEG, ECG and facial signals.
+        </div>
+
+        <div class="research-tags">
+          <span class="research-tag">Affective Computing</span>
+          <span class="research-tag">EEG & ECG</span>
+          <span class="research-tag">CNN-LSTM</span>
+          <span class="research-tag">Fuzzy Logic</span>
+          <span class="research-tag">Explainable AI</span>
+        </div>
+
         <div class="desc">
-          Add short summary of your AI / ML / systems work here.
+          EEG-based emotion recognition using GA-optimized CNN-LSTM models with explainable AI,
+          multimodal cross-subject emotion modeling with fuzzy logic, and facial emotion intensity
+          classification using deep learning ensembles.
         </div>
+
+        <div class="methods">
+          Methods: CNN-LSTM · Genetic Algorithm Optimization · Fuzzy Logic · Multimodal Learning · XAI
+        </div>
+
         <div class="card-footer">
           <span class="card-cta">View projects →</span>
-          <span style="font-size:12px;color:var(--muted);">XX Projects</span>
+          <span style="font-size:12px;color:var(--muted);">03 Projects</span>
         </div>
+
       </div>
     </a>
 
-  </div>
 
+
+
+    <!-- IIT INDORE -->
+    <a class="card" href="iiti/index.html">
+      <!-- <div class="card-stripe"></div> -->
+      <div class="card-stripe stripe-orange"></div>
+      <div class="arrow">↗</div>
+      <div class="card-body">
+
+
+        <div class="inst-header">
+            <img src="resources/iiti/inst_logo/iit_i.png" alt="IIT Indore Logo" class="inst-logo"/>
+            <h3>Indian Institute of Technology Indore</h3>
+        </div>
+
+        <div class="role">Research Intern · Apr 2022 – July 2022</div>
+
+        <div class="research-focus">
+          Research Focus: Remote sensing and machine learning for forest biomass and structural parameter estimation.
+        </div>
+
+        <div class="research-tags">
+          <span class="research-tag">Remote Sensing</span>
+          <span class="research-tag">Radar</span>
+          <span class="research-tag">Forest Biomass and Height Estimation</span>
+          <span class="research-tag">Machine Learning</span>
+          <span class="research-tag">AGB Estimation</span>
+        </div>
+
+        <div class="desc">
+          Machine learning for forest biomass estimation using L-band radar backscatter data,
+          enabling accurate above-ground biomass (AGB) and forest height predictions simultaneously.
+        </div>
+
+        <div class="methods">
+          Methods: Radar Backscatter Analysis · Machine Learning · Remote Sensing Data Processing
+        </div>
+
+        <div class="card-footer">
+          <span class="card-cta">View projects →</span>
+          <span style="font-size:12px;color:var(--muted);">01 Project</span>
+        </div>
+
+      </div>
+    </a>
+
+
+  </div>
 </div>
 
 <footer>

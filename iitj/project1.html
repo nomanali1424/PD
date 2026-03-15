@@ -602,8 +602,8 @@
           rel="noopener noreferrer">
           📄 Project Report
         </a>
-        <a href="#" class="lbtn primary">📄 Paper</a>
-        <a href="#" class="lbtn">⌨️ GitHub</a>
+        <!-- <a href="#" class="lbtn primary">📄 Paper</a>
+        <a href="#" class="lbtn">⌨️ GitHub</a> -->
         <a href="https://drive.google.com/file/d/12Z_fkRmUNk6TttZeS9GUN65wykozvUcj/view?usp=sharing" 
           class="lbtn primary" 
           target="_blank" 
@@ -644,24 +644,6 @@ The resulting dual-feedback (visual + tactile) system significantly improves res
 
 
 
-    <!-- ── ABSTRACT ──
-    <div class="sec abstract-section">
-      <div class="sec-label">ABSTRACT</div>
-
-      <p class="abstract-text">
-        Teleoperation systems that integrate haptic and visual feedback are essential for precision-critical remote applications such as teledentistry, telesurgery, and remote maintenance. However, achieving low-latency, stable, and immersive interaction over real-world networks remains a significant challenge due to communication constraints, kinematic mismatches, and sensor inaccuracies. This work presents the design, implementation, and evaluation of an adaptive teleoperation framework built around a UR3e collaborative robot and a Geomagic Touch haptic device.
-      </p>
-
-      <p class="abstract-text">
-        First, we develop a controlled testbed to evaluate communication protocols under varying network conditions, analyzing multiplexing support, Quality of Service (QoS) policies, and prioritization mechanisms. Experimental comparisons reveal that ROS2 provides superior support for multiplexing and QoS-based prioritization, enabling smoother and more reliable teleoperation compared to ROS1-based setups. Integrated real-time video feedback further enhances operator situational awareness.
-      </p>
-
-      <p class="abstract-text">
-        Second, we design a task-space proportional control strategy using geometric and analytical Jacobians to ensure accurate pose tracking between the haptic stylus and robot end effector despite kinematic differences. A force/torque sensor is analytically calibrated and transformed across coordinate frames to deliver precise, direction-consistent haptic feedback. The resulting dual-feedback (visual + tactile) system significantly improves responsiveness and operator immersion.
-      </p>
-    </div> -->
-
-
 
     <!-- ── TALK / VIDEO ── -->
     <div class="sec">
@@ -685,56 +667,6 @@ The resulting dual-feedback (visual + tactile) system significantly improves res
 
 
     
-
-    <!-- ── METHOD ── -->
-    <div class="sec">
-      <div class="sec-label">Method</div>
-      <div class="method-img">
-        <!-- Replace with: <img src="./resources/method_diagram.png" alt="Method Diagram"/> -->
-        <div class="method-placeholder">
-          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5"/>
-          </svg>
-          <span>Add method diagram (./resources/method_diagram.png)</span>
-        </div>
-      </div>
-      <p class="method-caption">Figure 1. Overview of the proposed method. Replace this with a caption describing your diagram.</p>
-    </div>
-
-    <!-- ── PAPER & SUPPLEMENTARY ── -->
-    <div class="sec">
-      <div class="sec-label">Paper &amp; Supplementary Material</div>
-      <div class="paper-row">
-        <a href="#" class="paper-thumb">
-          <!-- Replace with: <img src="./resources/paper.png" alt="Paper thumbnail"/> -->
-          <div class="paper-thumb-placeholder">📄</div>
-        </a>
-        <div class="paper-info">
-          <div class="pi-authors">F. Author, S. Author, T. Author.</div>
-          <div class="pi-title">Creative and Descriptive Project Title Here.</div>
-          <div class="pi-venue">In Conference Name, 20XX. (hosted on <a href="#">ArXiv</a>)</div>
-          <div class="link-row" style="justify-content:flex-start;">
-            <a href="#" class="lbtn primary">📄 Paper</a>
-            <a href="#" class="lbtn">📎 Supplementary</a>
-            <a href="#" class="lbtn">🗒️ ArXiv</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── BIBTEX ── -->
-    <div class="sec">
-      <div class="sec-label">BibTeX</div>
-      <button class="copy-btn" onclick="copyBib()">⎘ Copy</button>
-      <div class="bibtex-block" id="bibtex">@inproceedings{author2025title,
-  title     = {Creative and Descriptive Project Title Here},
-  author    = {First Author and Second Author and Third Author},
-  booktitle = {Conference Name},
-  year      = {2025},
-  url       = {https://arxiv.org/abs/XXXX.XXXXX}
-}</div>
-    </div>
-
     <!-- ── ACKNOWLEDGEMENTS ── -->
     <div class="sec">
       <div class="sec-label">Acknowledgements</div>

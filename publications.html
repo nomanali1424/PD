@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — Noman Ali</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+--bg:#f9fafb;
+--white:#ffffff;
+--ink:#111827;
+--ink2:#374151;
+--muted:#9ca3af;
+--border:#e5e7eb;
+--accent:#2563eb;
+}
+
+body{
+font-family:'Manrope',sans-serif;
+background:var(--bg);
+color:var(--ink);
+line-height:1.6;
+}
+
+/* NAV */
+
+nav{
+background:var(--white);
+border-bottom:1px solid var(--border);
+height:60px;
+display:flex;
+align-items:center;
+padding:0 40px;
+}
+
+.nav-brand{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:700;
+font-size:15px;
+text-decoration:none;
+color:var(--ink);
+}
+
+.avatar{
+width:30px;
+height:30px;
+border-radius:8px;
+background:var(--accent);
+color:#fff;
+font-size:12px;
+font-weight:800;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* HEADER */
+
+.header{
+background:var(--white);
+border-bottom:1px solid var(--border);
+padding:60px 40px;
+text-align:center;
+}
+
+.header h1{
+font-size:40px;
+font-weight:800;
+margin-bottom:8px;
+}
+
+.header p{
+font-size:16px;
+color:var(--ink2);
+}
+
+.scholar{
+margin-top:12px;
+}
+
+.scholar a{
+color:var(--accent);
+font-weight:600;
+text-decoration:none;
+}
+
+/* MAIN */
+
+.main{
+max-width:1000px;
+margin:auto;
+padding:60px 40px 80px;
+}
+
+/* YEAR */
+
+.year{
+font-size:22px;
+font-weight:800;
+margin-top:40px;
+margin-bottom:10px;
+}
+
+/* PUBLICATIONS */
+
+.pub-list{
+counter-reset:pub;
+}
+
+.pub{
+counter-increment:pub;
+padding:18px 0;
+border-bottom:1px solid var(--border);
+}
+
+.pub-title::before{
+content:"[" counter(pub) "] ";
+font-weight:700;
+color:var(--ink);
+}
+
+.pub-title{
+font-size:16px;
+font-weight:700;
+color:var(--accent);
+margin-bottom:4px;
+}
+
+.pub-title a{
+text-decoration:none;
+color:var(--accent);
+}
+
+.pub-authors{
+font-size:14px;
+margin-bottom:3px;
+}
+
+.pub-venue{
+font-size:14px;
+color:var(--ink2);
+margin-bottom:8px;
+}
+
+/* BUTTONS */
+
+.pub-links{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.pub-btn{
+font-size:12px;
+font-weight:600;
+padding:4px 10px;
+border-radius:6px;
+border:1px solid var(--border);
+background:white;
+text-decoration:none;
+color:var(--ink);
+cursor:pointer;
+}
+
+.pub-btn:hover{
+background:#f3f4f6;
+}
+
+/* STATUS */
+
+.pub-status{
+font-size:11px;
+font-weight:700;
+padding:3px 8px;
+border-radius:5px;
+margin-left:6px;
+}
+
+.status-published{
+background:#ecfdf5;
+color:#059669;
+}
+
+.status-submitted{
+background:#eff6ff;
+color:#2563eb;
+}
+
+.status-inprint{
+background:#fef3c7;
+color:#b45309;
+}
+
+/* FOOTER */
+
+footer{
+border-top:1px solid var(--border);
+background:var(--white);
+padding:20px;
+text-align:center;
+font-size:13px;
+color:var(--muted);
+margin-top:60px;
+}
+
+</style>
+
+<script>
+
+function copyBibtex(text){
+navigator.clipboard.writeText(text);
+alert("BibTeX copied!");
+}
+
+</script>
+
+</head>
+
+<body>
+
+<nav>
+<a class="nav-brand" href="index.html">
+<div class="avatar">NA</div>
+Noman Ali
+</a>
+</nav>
+
+<div class="header">
+<h1>Publications</h1>
+<p>Peer-reviewed publications and ongoing research contributions.</p>
+
+<div class="scholar">
+<a href="https://scholar.google.com/citations?hl=en&user=HNQXekoAAAAJ" target="_blank">
+View on Google Scholar →
+</a>
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="pub-list">
+
+<div class="year">2026</div>
+
+<div class="pub">
+
+<div class="pub-title">
+Spatially-Infused Spectrograms for Robust EEG Feature Extraction in Deep Learning Frameworks
+<span class="pub-status status-inprint">In Print</span>
+</div>
+
+<div class="pub-authors">
+Mohammad Asif, <strong>Noman Ali</strong>, et al.
+</div>
+
+<div class="pub-venue">
+ICASSP · IEEE
+</div>
+
+<div class="pub-links">
+<a class="pub-btn" href="#">PDF</a>
+<a class="pub-btn" href="#">Code</a>
+<button class="pub-btn"
+onclick="copyBibtex('@inproceedings{SIS2026,...}')">BibTeX</button>
+</div>
+
+</div>
+
+<div class="pub">
+
+<div class="pub-title">
+Is Meta-Path Attention an Explanation? Evidence of Alignment and Decoupling in Heterogeneous GNNs
+<span class="pub-status status-submitted">Submitted</span>
+</div>
+
+<div class="pub-authors">
+Maiqi Jiang, <strong>Noman Ali</strong>, et al.
+</div>
+
+<div class="pub-venue">
+ACM KDD
+</div>
+
+<div class="pub-links">
+<a class="pub-btn" href="#">arXiv</a>
+<a class="pub-btn" href="#">Code</a>
+</div>
+
+</div>
+
+
+<div class="year">2025</div>
+
+<div class="pub">
+
+<div class="pub-title">
+Advancing Facial Emotion Intensity Classification through Fuzzy Ensemble Learning
+<span class="pub-status status-published">Published</span>
+</div>
+
+<div class="pub-authors">
+<strong>Noman Ali</strong>, Mohammad Asif, et al.
+</div>
+
+<div class="pub-venue">
+ISDIA · Springer · Best Paper Award
+</div>
+
+<div class="pub-links">
+<a class="pub-btn"
+href="https://doi.org/10.1007/978-981-97-8666-4_17">DOI</a>
+</div>
+
+</div>
+
+
+<div class="year">2024</div>
+
+<div class="pub">
+
+<div class="pub-title">
+Optimizing Emotion Recognition in EEG Data with Genetic Algorithms
+<span class="pub-status status-published">Published</span>
+</div>
+
+<div class="pub-authors">
+<strong>Noman Ali</strong>, Mohammad Asif, et al.
+</div>
+
+<div class="pub-venue">
+ICCCNT · IEEE
+</div>
+
+<div class="pub-links">
+<a class="pub-btn"
+href="https://doi.org/10.1109/ICCCNT61001.2024.10725514">DOI</a>
+</div>
+
+</div>
+
+
+<div class="pub">
+
+<div class="pub-title">
+Forest Aboveground Biomass Estimation Over a Sub-tropical Forest Using Machine Learning
+<span class="pub-status status-published">Published</span>
+</div>
+
+<div class="pub-authors">
+<strong>Noman Ali</strong>, Umesh Khati, et al.
+</div>
+
+<div class="pub-venue">
+Journal of the Indian Society of Remote Sensing · Springer
+</div>
+
+<div class="pub-links">
+<a class="pub-btn"
+href="https://doi.org/10.1007/s12524-024-01821-5">DOI</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Noman Ali · Research Portfolio
+</footer>
+
+</body>
+</html>

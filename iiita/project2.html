@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Project Title — IIT Jodhpur</title>
+  <title>Project Title — IIIT Allahabad</title>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -15,8 +15,8 @@
       --ink2:     #374151;
       --muted:    #9ca3af;
       --border:   #e5e7eb;
-      --accent:   #7c3aed;
-      --accent-s: #f5f3ff;
+      --accent:   #2563eb;
+      --accent-s: #eff6ff;
     }
 
     body {
@@ -161,6 +161,29 @@
       margin-bottom: 28px;
     }
 
+
+    /* superscript styling */
+    .authors sup {
+      font-size: 0.65em;
+      vertical-align: super;
+      margin-left: 2px;
+    }
+
+    /* make Supervisor black and italic */
+    .authors em {
+      color: #000;
+      font-style: italic;
+      font-weight: 500;   /* slightly lighter than name */
+      margin-left: 4px;
+    }
+
+    /* affiliation superscripts */
+    .author-aff sup {
+      font-size: 0.75em;
+    }
+
+
+
     /* link buttons */
     .link-row {
       display: flex;
@@ -233,15 +256,19 @@
       border-radius: 10px;
       border: 1px solid var(--border);
       background: var(--bg);
-      aspect-ratio: 16/7;
+      /* aspect-ratio: 16/7; */
+      aspect-ratio: auto;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
     }
 
-    .teaser img { width: 80%; height: 100%; object-fit: cover; border-radius: 10px; }
-  
+    .teaser img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
     .teaser-placeholder {
       display: flex;
@@ -254,13 +281,14 @@
     .teaser-placeholder svg { width: 48px; height: 48px; stroke: #d1d5db; }
     .teaser-placeholder p { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: #d1d5db; }
 
-    /* ─── ABSTRACT ─── */
+    ─── ABSTRACT ───
     .abstract-text {
       font-size: 16px;
       font-weight: 400;
       color: var(--ink2);
       line-height: 1.8;
     }
+
 
     /* ─── VIDEO EMBED ─── */
     .video-wrap {
@@ -389,7 +417,13 @@
       overflow: hidden;
     }
 
-    .method-img img { width: 100%; border-radius: 10px; }
+
+    .method-img img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+    }
 
     .method-placeholder {
       display: flex;
@@ -420,6 +454,31 @@
       line-height: 1.75;
     }
 
+
+    /* ─── INSTITUTION LOGOS ─── */
+    .logo-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      padding: 10px 0 5px 0;
+    }
+
+    .logo-row img {
+      height: 90px;
+      object-fit: contain;
+      opacity: 0.9;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .logo-row img:hover {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+
+
     /* ─── FOOTER ─── */
     footer {
       border-top: 1px solid var(--border);
@@ -431,7 +490,28 @@
     }
 
     .f-left { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--muted); }
-    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #10b981; }
+    /* .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #10b981; } */
+
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* Ongoing (Green + pulse) */
+    .status-dot.active {
+      background: #10b981;
+      box-shadow: 0 0 0 0 rgba(16,185,129,0.6);
+      animation: pulse 1.8s infinite;
+    }
+
+    /* Completed (Elegant Gray) */
+    .status-dot.completed {
+      background: #6b7280;
+    }
+
     .f-right  { font-size: 13px; color: var(--muted); }
 
     @media (max-width: 680px) {
@@ -448,8 +528,8 @@
   <!-- Nav -->
   <nav>
     <a class="nav-brand" href="index.html">
-      <div class="avatar">IJ</div>
-      IIT Jodhpur
+      <div class="avatar">NA</div>
+      Noman @CCC-IIIT Allahabad
     </a>
     <a class="nav-back" href="index.html">← Back to portfolio</a>
   </nav>
@@ -458,64 +538,211 @@
   <div class="breadcrumb">
     <a href="index.html">Portfolio</a>
     <span class="sep">/</span>
-    <span class="current">Understanding Neuroscience of Touch</span>
+    <span class="current">MetaXplain</span>
   </div>
 
   <div class="page">
 
     <!-- ── HEADER ── -->
     <div class="project-header">
-      <div class="project-tag">Project 02 · IIT Jodhpur</div>
-      <h1 class="project-title">Understanding Neuroscience of Touch</h1>
+      <div class="project-tag">Project 02 · IIIT Allahabad</div>
+      <h1 class="project-title">DeepFuz2: Deep Fuzzy Framework for Ex-
+perienced Emotion Analysis in Valence-Arousal-Dominance Space using High-Density
+EEG Signals</h1>
+
 
       <div class="authors">
-        <a class="author" href="#">Noman Ali</a>
-        <a class="author" href="#">Vignesh Muralidharan</a>
-        <a class="author" href="#">Amit Bhardwaj</a>
+        <a class="author" href="#">Mohammad Asif<sup>a,1</sup></a>
+        <a class="author" href="#">Noman Ali<sup>2,b</sup></a>
+        <a class="author" href="#">Sudhakar Mishra<sup>3</sup></a>
+        <a class="author" href="https://scholar.google.com/citations?user=INnySpQAAAAJ&hl=en">
+          Uma Shanker Tiwary<sup>1</sup> <em>(Supervisor)</em>
+        </a>
       </div>
-      <span class="author-aff">Indian Institute of Technology Jodhpur &nbsp;·&nbsp; 2025</span>
+
+      <div class="author-aff">
+        <sup>a</sup> Indian Institute of Technology Bombay, Mumbai, India  
+        <br>
+        <sup>1</sup> Indian Institute of Information Technology Allahabad, Prayagraj, India  
+        <br>
+        <sup>2</sup> Indian Institute of Technology Madras, Chennai, India
+        <br>
+        <sup>b</sup> Panjab University, Chandigarh, India
+        <br>
+        <sup>3</sup> Indian Institute of Technology Kanpur, Kanpur, India
+        <!-- &nbsp;·&nbsp; 2025 -->
+      </div>
+
+
+
 
       <div class="link-row">
-        <a href="https://drive.google.com/file/d/1sRYehO5PAQR8oXRqq9gGVHLJLEKmXTdH/view?usp=sharing" class="lbtn primary">📄 Project Report</a>
-        <!-- <a href="#" class="lbtn">⌨️ GitHub</a> -->
-        <a href="#" class="lbtn">📊 Slides</a>
+        <a href="https://drive.google.com/file/d/1p1RtctPYrBPUIZEydBxFXaxYbj6ZghI1/view?usp=sharing" 
+          class="lbtn primary" 
+          target="_blank" 
+          rel="noopener noreferrer">
+          📄 Paper
+        </a>
+
+        <!-- <a href="https://drive.google.com/file/d/1zbbh601FlJZ4iRlsY5cWxI2c9A548BeL/view?usp=sharing" class="lbtn primary">📄 Paper</a> -->
+        <!-- <a href="#" class="lbtn primary">⌨️ GitHub</a> -->
+        <a href="#" class="lbtn primary" onclick="showCodeNotice(event)">⌨️ GitHub</a>
+        <!-- <a href="https://drive.google.com/file/d/12Z_fkRmUNk6TttZeS9GUN65wykozvUcj/view?usp=sharing" 
+          class="lbtn primary" 
+          target="_blank" 
+          rel="noopener noreferrer">
+          ▶️ Demo
+        </a> -->
+        <a href="#" class="lbtn primary">📊 Slides</a>
       </div>
     </div>
 
-    <!-- ── TEASER IMAGE ── -->
+
     <div class="sec">
       <div class="sec-label">Teaser</div>
       <div class="teaser">
-        <!-- Replace with: <img src="./resources/teaser.png" alt="Teaser"/> -->
-        <img src="./resources/iitj/T2.png" alt="Understanding Neuroscience of Touch">
+        <img src="resources/p2/T.png" alt="Teaser Image">
       </div>
     </div>
+
 
     <!-- ── ABSTRACT ── -->
     <div class="sec">
       <div class="sec-label">Abstract</div>
       <p class="abstract-text">
-        Understanding how humans perceive touch is fundamental to advancing haptics, neuroscience, and human–computer interaction. However, existing approaches often rely primarily on behavioral observations and self-reported measures, which may fail to capture the complex neural mechanisms underlying tactile perception. In this work, we propose a novel neurohaptic research framework that leverages electroencephalography (EEG) to investigate the neural representation of tactile experiences. Unlike conventional studies that primarily use EEG or fMRI for supervised classification tasks, our approach explores the potential of EEG signals to discover latent patterns and previously unknown classes in touch perception. Participants interact with various materials through active tactile exploration while EEG signals and subjective Likert-scale ratings are collected to capture perceived attributes such as roughness and hardness. By analyzing these signals using clustering-based methods, the study aims to reveal inter-class and intra-class relationships between different tactile stimuli and identify similarities in neural responses across materials. Furthermore, the framework enables the integration of new materials by comparing them with existing clusters, expanding beyond traditional fixed-class classification paradigms. This research provides deeper insights into the neurobiological foundations of touch perception and offers promising applications in neurohaptics, robotics, and immersive technologies such as the metaverse.
+        Recently, analysis of emotional states using neuro
+logical data has drawn enough attention. However, the complex
+nature of emotions and the subjective biases in self-reported
+values of Valence, Arousal and Dominance (VAD) make the
+emotion model too specific to a particular experiment. This study
+aims to develop a generic model representing emotions using a
+fuzzy VAD space and improve emotion recognition by multimodal
+fusion with EEG data. We partitioned the crisp VAD space into
+a fuzzy VAD space using low, medium and high type-2 fuzzy
+dimensions to represent emotions. A framework that integrates
+fuzzy VAD space and EEG modalities has been developed to rec
+ognize emotions. The EEG features were extracted using spatial
+and temporal feature vectors from time-frequency spectrograms,
+while the subject-reported values of VAD were also considered.
+The study was conducted on the DENS dataset, which includes
+a wide range of twenty-four emotions, along with EEG data and
+subjective ratings. The study was validated using various deep
+fuzzy framework models based on type-2 fuzzy representation,
+cuboid probabilistic lattice representation and unsupervised fuzzy
+emotion clusters. These models resulted in emotion recognition
+accuracy of 96.09%, 95.75% and 95.31%, respectively, for the
+classes of 24 emotions. The study also included an ablation study,
+one with crisp VAD space and the other without VAD space.
+The result with crisp VAD space performed better, while the
+deep fuzzy framework outperformed both models. The model
+was extended to predict cross-subject cases of emotions, and
+the results with 78.37% accuracy are promising, proving the
+generality of our model. The generic nature of the developed
+model, along with its successful cross-subject predictions, gives
+direction for real-world applications in areas such as affective
+computing, human-computer interaction, and mental health care.
       </p>
+    </div>
+
+
+
+
+    <!-- ── TALK / VIDEO ──
+    <div class="sec">
+      <div class="sec-label">Talk / Video</div>
+      <div class="video-wrap">
+        <iframe 
+          src="https://drive.google.com/file/d/12Z_fkRmUNk6TttZeS9GUN65wykozvUcj/preview?autoplay=1"
+          width="100%" 
+          height="480"
+          allow="autoplay"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-links">
+        <a href="#" class="lbtn">📊 Slides</a>
+        <a href="#" class="lbtn">📝 Transcript</a>
+      </div>
+    </div> -->
+
+
+
+
+    
+
+    <!-- ── METHOD ── -->
+
+    <div class="sec">
+      <div class="sec-label">Method</div>
+
+      <div class="method-img">
+        <img src="resources/p2/M.png" alt="Method Diagram">
+      </div>
+
+      <p class="method-caption">
+        Figure 1. Overview of the Deep Fuzzy Architecture: This architecture consists of three modules. The spatial module is based on CNNs, the
+Temporal module is based on LSTMs, and the third module is our proposed Fuzzy Framework.
+    </div>
+
+
+
+    
+
+    <!-- ── BIBTEX ── -->
+    <div class="sec">
+      <div class="sec-label">BibTeX</div>
+      <button class="copy-btn" onclick="copyBib()">⎘ Copy</button>
+
+
+      <div class="bibtex-block" id="bibtex">
+Citation details will be provided after the peer-review process is completed.
+
+Please refer to the preprint paper for citation information in the meantime.
+</div>
     </div>
 
     <!-- ── ACKNOWLEDGEMENTS ── -->
     <div class="sec">
       <div class="sec-label">Acknowledgements</div>
       <p class="ack-text">
-        This work was supported by the Conitive Science Department at IIT Jodhpur. 
-        The author sincerely acknowledges the guidance and mentorship of Dr. Vignesh Muralidharan and Dr. Amit Bhardwaj, whose expertise, insights, and continuous support were instrumental in shaping this research. 
-          The author also extends gratitude to the participants who contributed their time and effort to the study, as well as to the broader research community for their foundational work in neurohaptics and tactile perception that inspired this project.
+        This work was supported by the Center for Cognitive Computing (CCC), 
+        Indian Institute of Information Technology (IIIT) Allahabad, India. 
+        The author sincerely acknowledges the guidance and mentorship of
+        Dr. Uma Shanker Tiwary, whose expertise, continuous support, and 
+        insightful discussions were instrumental in shaping this research. 
+        His valuable feedback significantly contributed to the development 
+        and evaluation of the proposed framework.
       </p>
     </div>
 
+
+    <!-- ── INSTITUTIONS ── -->
+    <div class="sec">
+      <div class="sec-label">Supporting Institutions</div>
+
+      <div class="logo-row">
+        <img src="./resources/iiita/SIS/inst_logo/iitb.png" alt="IITB Logo">
+        <img src="./resources/iiita/SIS/inst_logo/iitm.png" alt="IITM Logo">
+        <img src="./resources/iiita/SIS/inst_logo/iiita.png" alt="IIITA Logo">
+        <img src="./resources/iiita/SIS/inst_logo/iitk.png" alt="IITK Logo">
+        <img src="../resources/pu/PU.png" alt="PU Logo">
+        <!-- <img src="./resources/iiita/SIS/inst_logo/ccc_1.png" alt="CCC Logo"> -->
+      </div>
+    </div>
+
+
+
   </div>
+
+
+
 
 
   <footer>
     <div class="f-left">
       <div class="live-dot"></div>
-      IIT Jodhpur · Research Portfolio
+      <!-- <span class="status-dot completed"></span> -->
+      IIIT Allahabad · Research Portfolio
     </div>
     <div class="f-right"><a href="index.html" style="color:inherit;">← Back to all projects</a></div>
   </footer>
@@ -530,6 +757,13 @@
       });
     }
   </script>
+
+<script>
+function showCodeNotice(event) {
+  event.preventDefault();
+  alert("The source code will be released after the peer-review process of IEEE Transactions on Affective Computing.\n\nPlease refer to the preprint paper for details.");
+}
+</script>
 
 </body>
 </html>
